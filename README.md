@@ -1,22 +1,20 @@
 <h1><code>Module 323</code> - Programmer de manière fonctionnelle</h1>
 
-# 😅 Exercice 07 - Pipe
+# 😅 Exercice 07 - Pipe / Solution
 
 ## Objectifs
 
-- Entraîner les chaînages "pipes".
-
-## Rapports à produire
+-   Entraîner les chaînages "pipes".
 
 ## P1 - Ajouter la note fédérale à toutes les évaluations effectuées
 
->[!IMPORTANT]
->Avant de poursuivre, documentez-vous d'abord sur les sujets suivants :
+> [!IMPORTANT]
+> Avant de poursuivre, documentez-vous d'abord sur les sujets suivants :
 >
->- Unary functions ⁉️
->- Currying ⁉️
->- Closure ⁉️
->- Fonction "pipe" ⁉️
+> -   Unary functions ⁉️
+> -   Currying ⁉️
+> -   Closure ⁉️
+> -   Fonction "pipe" ⁉️
 
 **⚠️ Vous allez devoir faire la même chose que dans l'exercice précédent, mais cette fois-ci en utilisant la fonction "pipe" ‼️**
 
@@ -26,42 +24,73 @@ Observez avec attention [les données sur des examens réalisés](/src/ex07-data
 
 Ajouter la note obtenue à chaque étudiant en respectant l’**échelle fédérale** :
 
-- on divise le nombre de point obtenus par le nombre de points total de l’épreuve
-- on multiplie ce nombre par 5
-- on ajoute 1
-- on arrondit au demi-point
+-   on divise le nombre de point obtenus par le nombre de points total de l’épreuve
+-   on multiplie ce nombre par 5
+-   on ajoute 1
+-   on arrondit au demi-point
 
 Constituer le tableau HTML montrant les examens réalisés avec la note officielle. Vous devriez obtenir ceci :
 
 <img src="res/P1.png" width="33%">
 
-## P2 - xxx
+## P2 - Traducteur loufoque
 
-Blabla :
+### But de l’exercice
 
-```json
-```
+Écrire du code qui **traduit** le texte saisi dans une zone de texte vers un langage “farfelu” en **chaînant** des fonctions **unaires** (principe du _pipe_).
 
-## P3 - xxx
+### Règles de transformation (dans cet ordre)
 
-Blabla :
+1. **Mettre en majuscules** toute la chaîne.
+2. **Remplacer toutes les voyelles par `I`**.
+3. **Doubler toutes les consonnes**.
+4. **Ajouter l’émoji `😎` à la fin** de la phrase.
 
-```json
-```
+### Contraintes
 
-## P4 - xxx
+-   Utiliser **exclusivement** des **fonctions unaires** (une entrée → une sortie).
+-   Chaque étape doit être une **fonction pure** qui **prend une chaîne** et **retourne une chaîne**.
+-   La traduction finale doit être obtenue en **composant** ces fonctions via un _pipe_ (pas d’effets de bord intermédiaires).
+-   **Afficher** à l’écran la **phrase initiale** **et** la **phrase traduite**.
 
-Blabla :
+### Livrables attendus
 
-```json
-```
+-   Un **affichage** clair de :
 
-## P5 - xxx
+    -   “input : …”
+    -   “output traduit : …”
 
-Blabla :
+<img src="res/P2.png" width="50%">
 
-```json
-```
+## P3 - moteur de recherche d’élèves avec **pipe** (composition de fonctions)
+
+### But de l’exercice
+
+Implémenter un **moteur de recherche d’élèves** en composant des **fonctions unaires** (principe du _pipe_). La recherche s’effectue sur :
+
+-   un **champ unique** pour _nom ou prénom_ (confondu),
+-   l’**année de naissance**,
+-   le **sexe** (`M`, `F`, `N`),
+-   une **case à cocher** pour l’**affichage condensé** des résultats.
+
+### Contraintes
+
+-   Toutes les **opérations de filtrage** et de **projection** sont des **fonctions unaires** (une entrée → une sortie), **pures** (sans effets de bord).
+-   Le **pipeline** ne doit contenir **que** les fonctions correspondant aux champs **renseignés**.
+
+    > Si un champ est vide/non coché, **sa fonction est exclue du pipe**.
+
+-   L’UI doit afficher la **liste** (complète ou condensée).
+
+### Bonus (optionnel)
+
+-   Recherche **insensible aux espaces multiples** et aux **accents** (déjà amorcé par `normalize`).
+-   **Tri** des résultats (ex. `nom` puis `prenom`) via une étape unaire supplémentaire optionnelle.
+-   **Recherche en direct** (debounce) et **surbrillance** des correspondances dans l’affichage.
+-   Message “**Aucun résultat**” ergonomique.
+
+<img src="res/P3.png" width="100%">
+<img src="res/P3_2.png" width="100%">
 
 ---
 

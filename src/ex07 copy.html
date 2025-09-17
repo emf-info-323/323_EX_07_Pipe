@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Exercice 7 - Pipe - Solution</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 2em;
+            }
+
+            button,
+            input {
+                margin: 0.2em;
+                padding: 0.5em 0.5em;
+                font-size: 1em;
+            }
+
+            .output {
+                margin-top: 2em;
+                padding: 1em;
+                font-family: 'Consolas', 'Courier New', Courier, monospace;
+                font-size: 1em;
+                font-weight: normal;
+                border: 1px solid #ccc;
+                min-height: 2em;
+                background: #fafafa;
+                color: darkgreen;
+            }
+
+            code {
+                color: darkred;
+            }
+
+            #tableNotes {
+                border-width: 1px;
+                border-spacing: 0px;
+            }
+
+            #tableNotes th {
+                padding: 3px;
+                text-align: right;
+                background-color: #adc7fa;
+            }
+
+            #tableNotes td {
+                padding: 3px;
+                text-align: right;
+            }
+
+            #tableNotes td:first-child,
+            #tableNotes th:first-child {
+                text-align: left;
+            }
+        </style>
+        <script src="ex07-data-examens.js"></script>
+        <script src="ex07-data-eleves.js"></script>
+        <script src="ex07-solution.js"></script>
+    </head>
+
+    <body>
+        <h1>Exercice 7 - <code>Pipe</code> - Solution</h1>
+        <br />
+        <hr />
+        <h3>Partie 1 : calculer et ajouter la note à chaque évaluation</h3>
+        <button id="idActionP1">P1 - Calculer les notes fédérales des examens et les afficher</button>
+        <br />
+        <br />
+        <table id="tableNotes" class="" border="1">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Points</th>
+                    <th>Note</th>
+                </tr>
+            </thead>
+        </table>
+        <br />
+        <hr />
+        <h3>Partie 2 : traducteur loufoque</h3>
+
+        <button id="idActionP2">P2 - Traduire la phrase dans un langage loufoque</button>
+        <input type="text" id="inputString" placeholder="Entrez une chaîne" />
+
+        <pre id="output" class="output"></pre>
+
+        <br />
+        <hr />
+        <h3>Partie 3 : recherche d'élève</h3>
+
+        <fieldset>
+            <legend>Recherche d'élève</legend>
+            <input type="text" id="inputStringNomPrenom" placeholder="Nom/Prénom de l'élève" />
+            <input type="number" id="inputNumberAnnee" placeholder="Année de naissance" min="1900" max="2100" />
+            Sexe :
+            <label><input type="radio" name="inputRadioSexe" value="" checked /> Aucun</label>
+            <label><input type="radio" name="inputRadioSexe" value="M" /> Masculin</label>
+            <label><input type="radio" name="inputRadioSexe" value="F" /> Féminin</label>
+            <label><input type="radio" name="inputRadioSexe" value="N" /> Non-genré</label>
+            <br />
+            <label><input type="checkbox" id="inputCheckboxVersionCourte" />Données condensées</label>
+        </fieldset>
+        <button id="idActionP3">P3 - Recherche</button>
+
+        <pre id="output2" class="output"></pre>
+    </body>
+</html>
